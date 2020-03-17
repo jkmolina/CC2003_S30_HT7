@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 
@@ -17,7 +18,6 @@ public class Translator {
     Association<String,String> association= new Association<>();
     String line=br.readLine();
 
-    System.out.println(line);
 
     String words[]=line.split(" ");
     for(int i=0;i<words.length;i++)
@@ -32,6 +32,7 @@ public class Translator {
         words[i]="*"+words[i]+"*";
     }
     Map<String,String> keyMap=association.inOrder(association.house);
+    System.out.println("Map after In-Order Sorting is: "+keyMap);
 
     Set<String> keysList=keyMap.keySet();
 
@@ -52,11 +53,13 @@ public class Translator {
     StringBuilder sb= new StringBuilder(words[words.length-1]);
     sb.append(".");
     words[words.length-1]=String.valueOf(sb);
+    String sentence="";
 
     for(int i=0;i<words.length;i++)
     {
-        System.out.println(words[i]);
+        sentence+=(words[i])+" ";
     }
+    System.out.println("Final Sentence is: "+sentence);
     
 
 
