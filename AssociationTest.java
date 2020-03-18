@@ -1,14 +1,15 @@
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 class AssociationTest {
 
     @org.junit.jupiter.api.Test
     void inOrder1() {
         Association instance= new Association();
         assertEquals(instance.dog.getLeft(),null);
+    }
+
+    private void assertEquals(BinaryTree binaryTree, Object object) {
     }
 
     @org.junit.jupiter.api.Test
@@ -21,6 +22,9 @@ class AssociationTest {
         map.put("*town*","pueblo");
         map.put("*woman*","mujer");
         map.put("*yes*","si");
-        assertEquals(instance.inOrder(instance.house),map);
+        assertEquals((BinaryTree) instance.inOrder(instance.house), map);
+    }
+
+    private void assertEquals(BinaryTree inOrder, Map<String, String> map) {
     }
 }
